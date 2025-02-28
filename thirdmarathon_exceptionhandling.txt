@@ -1,0 +1,56 @@
+CreateLead:
+
+1.InvalidSelectorException:
+//driver.findElement(By.className("slds-icon- waffle")).click();
+Handled with:
+driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
+
+2.JavascriptException:
+//a[@title='Accounts']
+Handled with:
+	WebElement acc = driver.findElement(By.xpath("//span[text()='Accounts']"));
+	driver.executeScript("arguments[0].click()", acc);
+
+3.NoSuchElementException:
+//driver.findElement(By.xpath("//lightning-base-combobox-item[@data-value='public']")).click();
+Handled with:
+driver.findElement(By.xpath("(//lightning-base-combobox-item//span)[6]")).click();
+
+
+Editlead:
+
+1.InvalidSelectorException:
+//driver.findElement(By.className("slds-icon- waffle")).click();
+Handled with:
+driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
+
+2.nosuchelementexception:
+driver.findElement(By.xpath("//table/tbody/tr[1]/th[6]")).click();
+handled with:
+  driver.findElement(By.xpath("//table/tbody/tr[1]//td[6]")).click();
+
+3.staleElementException:
+driver.findElement(By.xpath("//table/tbody/tr[1]//td[6]")).click();
+handled with:
+thread.sleep(2000);
+
+4.InvalidSelectorException
+(By.xpath("(//label[text()='Shipping Street']/following::textarea"))
+handled with:
+(By.xpath("//label[text()='Shipping Street']/following::textarea"))
+
+DeleteLead:
+
+1.InvalidSelectorException:
+//driver.findElement(By.className("slds-icon- waffle")).click();
+Handled with:
+driver.findElement(By.xpath("//div[@class='slds-icon-waffle']")).click();
+2.InvalidSelectorException:
+driver.findElement(By.xpath("//a[title()='Delete']")).click();
+Handled with:
+  driver.findElement(By.xpath("//a[@title='Delete']")).click();
+3.NumberFormatException:
+//int countAfterDelete = Integer.parseInt(s[1]);
+Handled with:
+//int countAfterDelete = Integer.parseInt(s[0]);
+
